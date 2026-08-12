@@ -1,0 +1,297 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Network Traffic Analysis Report</title><style>
+    body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { border-bottom: 3px solid #1a1a1a; padding-bottom: .5rem; }
+    h2 { margin-top: 2rem; color: #1a1a1a; }
+    h3 { margin-top: 1.5rem; }
+    li { margin: .25rem 0; }
+    code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; font-size: .85em; }
+    </style></head><body><h1>Network Traffic Analysis Report</h1>
+<br/>
+<p><i>Generated: 2026-08-13 01:19:12</i></p>
+<br/>
+<h2>Summary</h2>
+<br/>
+<li>Total packets analyzed: <b>327</b></li>
+<li>Total alerts raised: <b>38</b></li>
+<br/>
+<p><b>Protocol breakdown:</b></p>
+<li>TCP: 290</li>
+<li>DNS: 35</li>
+<li>OTHER: 2</li>
+<br/>
+<p><b>Alerts by severity:</b></p>
+<li>HIGH: 1</li>
+<li>MEDIUM: 37</li>
+<br/>
+<h2>Findings</h2>
+<br/>
+<h3>1. [HIGH] Dos Flood</h3>
+<li><b>Time:</b> 2026-08-13 01:19:24</li>
+<li><b>Source IP:</b> 172.16.0.99</li>
+<li><b>Target IP:</b> 172.16.0.1</li>
+<li><b>Details:</b> Possible Single-source (DoS) SYN flood against 172.16.0.1: 100 SYNs in 5.0s from 1 unique source(s)</li>
+<li><b>Evidence:</b> <code>{'total<i>syns': 100, 'unique</i>sources': 1, 'top<i>source': '172.16.0.99', 'top</i>source_count': 100}</code></li>
+<br/>
+<h3>2. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:41</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=74, entropy=4.56 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'qcq30o30ubmc97c7bo119xp9n56nyxtxmgtt0iaakytt3imj70e3p.exfil-tunnel.example', 'length': 74, 'entropy': 4.56}</code></li>
+<br/>
+<h3>3. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:40</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=71, entropy=4.52 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'k0axycelos6zle6kwhef0votqtxhi15cqzcuctsuflsehuds3q.exfil-tunnel.example', 'length': 71, 'entropy': 4.52}</code></li>
+<br/>
+<h3>4. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:40</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.75 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '9or7875aud9k9tr74qgefqjg02u1g463sdygfliji.exfil-tunnel.example', 'length': 62, 'entropy': 4.75}</code></li>
+<br/>
+<h3>5. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:40</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'kzmpjrht7zewviytwbozd1at7o75rh8lx6dut076g.exfil-tunnel.example', 'length': 62, 'entropy': 4.69}</code></li>
+<br/>
+<h3>6. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:39</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=67, entropy=4.68 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'alfyo1750cehlxslg6mm1zxyvgiui9kkhzlm72jeyn9382.exfil-tunnel.example', 'length': 67, 'entropy': 4.68}</code></li>
+<br/>
+<h3>7. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:39</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'belrqvslwf90km3tzk3ny9v20yar821uzvgww4fyb.exfil-tunnel.example', 'length': 62, 'entropy': 4.69}</code></li>
+<br/>
+<h3>8. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:39</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Details:</b> Possible DNS tunneling: 10.0.0.7 made 30 distinct DNS queries within 60.0s</li>
+<li><b>Evidence:</b> <code>{'unique_queries': 30}</code></li>
+<br/>
+<h3>9. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:39</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=68, entropy=4.67 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '8637zgf9q5rdoqivbkv4ykadejnobbunknqt3wvedn9unfv.exfil-tunnel.example', 'length': 68, 'entropy': 4.67}</code></li>
+<br/>
+<h3>10. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:38</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=70, entropy=4.78 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'wdxvugw6m7b5c81jhuwb6txki3oqyfoqmf5l9mo1sdieqfb85.exfil-tunnel.example', 'length': 70, 'entropy': 4.78}</code></li>
+<br/>
+<h3>11. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:38</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=66, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '2sehe2atn2twdl9zs13c9xqym52xg8p6befflzm764jwt.exfil-tunnel.example', 'length': 66, 'entropy': 4.69}</code></li>
+<br/>
+<h3>12. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:38</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=66, entropy=4.62 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '8fv2bc2nnuvy8n1utoxie0rnujjq9k6re4q6qdy4lmct6.exfil-tunnel.example', 'length': 66, 'entropy': 4.62}</code></li>
+<br/>
+<h3>13. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:38</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=70, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'h25llo3rbxk5bxj2pop8mgyn2jcpp9gkdlkqzfpq06wpx2cyo.exfil-tunnel.example', 'length': 70, 'entropy': 4.69}</code></li>
+<br/>
+<h3>14. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:37</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=61, entropy=4.59 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'wuzkamugysm8t2sa5bnn0mcixdu1emmx3y9rgez7.exfil-tunnel.example', 'length': 61, 'entropy': 4.59}</code></li>
+<br/>
+<h3>15. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:37</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=64, entropy=4.68 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'k1j6fp8hqmabsi9nb74x2ek3zezqacj4t0sekkbp2qd.exfil-tunnel.example', 'length': 64, 'entropy': 4.68}</code></li>
+<br/>
+<h3>16. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:37</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=65, entropy=4.61 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'c4d145bm1enf313fpoyipk0qtl3q4n89qkns832ejx5t.exfil-tunnel.example', 'length': 65, 'entropy': 4.61}</code></li>
+<br/>
+<h3>17. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:36</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=76, entropy=4.60 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 's8q349dxbz9svn7n1ybwmlunj48vfcx7lxxezduxlez896dysal8m1g.exfil-tunnel.example', 'length': 76, 'entropy': 4.6}</code></li>
+<br/>
+<h3>18. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:36</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=67, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '6m033ifhv1xg1r11q7uww5wfcpkjcslqc3c54wsqt26q3x.exfil-tunnel.example', 'length': 67, 'entropy': 4.69}</code></li>
+<br/>
+<h3>19. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:36</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=75, entropy=4.70 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'ohsmdyvslh9bh811kerpetiuymo0pqclpoxko8g8qynpdpoc50h2cw.exfil-tunnel.example', 'length': 75, 'entropy': 4.7}</code></li>
+<br/>
+<h3>20. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:35</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=74, entropy=4.68 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'mx15z8vmuhxid4n1u3493wxa73jgzlma5uofwb0hpmnz1udbfwyjx.exfil-tunnel.example', 'length': 74, 'entropy': 4.68}</code></li>
+<br/>
+<h3>21. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:35</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=75, entropy=4.90 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 's8b25sq8croyr6ccvcjwtl9tqvdz4x1zhqimqodpxnf7c3dd03uvul.exfil-tunnel.example', 'length': 75, 'entropy': 4.9}</code></li>
+<br/>
+<h3>22. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:35</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.48 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'oge4qxxva2ieuc1hh5lf6a4fejgxaa2ilgb0s0r2s.exfil-tunnel.example', 'length': 62, 'entropy': 4.48}</code></li>
+<br/>
+<h3>23. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:35</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=73, entropy=4.77 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '82n2atqyyv37dia5u6hc36kof8krd5eqy08p0fodro8bnp84dyt9.exfil-tunnel.example', 'length': 73, 'entropy': 4.77}</code></li>
+<br/>
+<h3>24. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:34</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=73, entropy=4.87 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '4dnmkza3oa52960361i2hgj11yedwb2bne6loh25nsjf678k52qc.exfil-tunnel.example', 'length': 73, 'entropy': 4.87}</code></li>
+<br/>
+<h3>25. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:34</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=71, entropy=4.76 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '44nlz15bcw790pdw5py6b2knftu2gc5wi6fqjja26yfpmvxpj4.exfil-tunnel.example', 'length': 71, 'entropy': 4.76}</code></li>
+<br/>
+<h3>26. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:34</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=76, entropy=4.79 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'itn7s55j2o7s3kkv9rftmttqlgzui1b0z3nx39rbsv55psq0oxfq8my.exfil-tunnel.example', 'length': 76, 'entropy': 4.79}</code></li>
+<br/>
+<h3>27. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:33</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=76, entropy=4.69 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'spk9p38qoldforxo1bdje153a5qbswrpbjek5rbw2zlaoi4e8xf7kzo.exfil-tunnel.example', 'length': 76, 'entropy': 4.69}</code></li>
+<br/>
+<h3>28. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:33</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=68, entropy=4.84 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'gcaqvkizzqy72wx7ptx63cfl0ukeyz7srcbpljd84u89yjb.exfil-tunnel.example', 'length': 68, 'entropy': 4.84}</code></li>
+<br/>
+<h3>29. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:33</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.85 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': '9tze5r5uqpgb7r3ocwbfuk9e1v2isqp49kwv08hhx.exfil-tunnel.example', 'length': 62, 'entropy': 4.85}</code></li>
+<br/>
+<h3>30. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:32</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=71, entropy=4.64 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'b4gh2m5zja8dzr1yxr2dhylurtp0lzjjeget1ghr09skdgigat.exfil-tunnel.example', 'length': 71, 'entropy': 4.64}</code></li>
+<br/>
+<h3>31. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:32</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=75, entropy=4.77 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'z1gv0e38daly8ozcywd14ve92mpnsm43d8w3zp08j3trp0j43d5iqv.exfil-tunnel.example', 'length': 75, 'entropy': 4.77}</code></li>
+<br/>
+<h3>32. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:32</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=73, entropy=4.80 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'r7ko64t026rjrny20479t6vxdp5gjlqm5k8p4q0b8ic8bbi4wire.exfil-tunnel.example', 'length': 73, 'entropy': 4.8}</code></li>
+<br/>
+<h3>33. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:32</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=68, entropy=4.87 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'g8sbi4q2y9v86wzs3t60rjiw1swjckjlteiyzcotohp6vz4.exfil-tunnel.example', 'length': 68, 'entropy': 4.87}</code></li>
+<br/>
+<h3>34. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:31</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=70, entropy=4.83 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'sylztgxn0guo4kh2vlpys280xkxwd8il3fb9w1q5uznofy645.exfil-tunnel.example', 'length': 70, 'entropy': 4.83}</code></li>
+<br/>
+<h3>35. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:31</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=69, entropy=4.90 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'fznbqh7m35ixokc1msy4la5ju9bvm2p9e6gbps3y70hp87wx.exfil-tunnel.example', 'length': 69, 'entropy': 4.9}</code></li>
+<br/>
+<h3>36. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:31</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=62, entropy=4.57 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'dpja1wj0tpac56t4ufel6246hid25owf75935a0l7.exfil-tunnel.example', 'length': 62, 'entropy': 4.57}</code></li>
+<br/>
+<h3>37. [MEDIUM] Dns Tunnel</h3>
+<li><b>Time:</b> 2026-08-13 01:19:30</li>
+<li><b>Source IP:</b> 10.0.0.7</li>
+<li><b>Target IP:</b> 8.8.8.8</li>
+<li><b>Details:</b> Suspicious DNS query from 10.0.0.7: length=68, entropy=4.61 (looks encoded, not a normal hostname)</li>
+<li><b>Evidence:</b> <code>{'query': 'ubcxuljyljexq77awudtsemcikptk93tyt7d5j60fkhmy4s.exfil-tunnel.example', 'length': 68, 'entropy': 4.61}</code></li>
+<br/>
+<h3>38. [MEDIUM] Port Scan</h3>
+<li><b>Time:</b> 2026-08-13 01:19:21</li>
+<li><b>Source IP:</b> 192.168.1.50</li>
+<li><b>Target IP:</b> 192.168.1.10</li>
+<li><b>Details:</b> Possible port scan: 192.168.1.50 touched 15 distinct ports on 192.168.1.10 within 5.0s</li>
+<li><b>Evidence:</b> <code>{'unique<i>ports': 15, 'sample</i>ports': [47, 72, 197, 234, 301, 371, 592, 634, 644, 678, 722, 792, 850, 883, 907]}</code></li>
+<br/>
+<h2>Recommendations</h2>
+<br/>
+<li>Rate-limit or block source IPs performing rapid multi-port connection attempts; review firewall rules for unnecessary open ports.</li>
+<li>Deploy SYN-cookie protection and rate-limiting at the edge/firewall; consider upstream DDoS scrubbing if distributed sources are involved.</li>
+<li>Inspect the flagged domain(s) for data exfiltration; consider blocking uncommon record types and enforcing DNS query logging/allow-listing at the resolver.</li></body></html>

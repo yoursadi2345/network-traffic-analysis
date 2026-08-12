@@ -1,0 +1,52 @@
+# local.rules
+# ------------
+# Custom Snort rules for the Network Traffic Analysis project.
+# Copy/append these into your Snort rules directory (commonly
+# /etc/snort/rules/local.rules) and make sure snort.conf has:
+#     include $RULE_PATH/local.rules
+#
+# Test with:
+#     sudo snort -c /etc/snort/snort.conf -A console -q -i <interface>
+#
+# SIDs 1000001-1000010 are reserved for this project (local/custom range).
+
+# --- Port scan detection ---
+alert tcp any any -> $HOME_NET any (msg:"NTA - Possible TCP Port Scan"; \
+    flags:S; threshold: type threshold, track by_src, count 20, seconds 5; \
+    classtype:attempted-recon; sid:1000001; rev:1;)
+
+# --- SYN flood / DoS detection ---
+alert tcp any any -> $HOME_NET any (msg:"NTA - Possible SYN Flood / DoS"; \
+    flags:S; threshold: type threshold, track by_dst, count 100, seconds 5; \
+    classtype:attempted-dos; sid:1000002; rev:1;)
+
+# --- ICMP flood (ping flood) ---
+alert icmp any any -> $HOME_NET any (msg:"NTA - Possible ICMP Flood"; \
+    itype:8; threshold: type threshold, track by_dst, count 50, seconds 5; \
+    classtype:attempted-dos; sid:1000003; rev:1;)
+
+# --- ARP spoofing (requires Snort built/configured with arpspoof preprocessor,
+#     or use arpwatch/arpon alongside Snort for L2 monitoring) ---
+# Example placeholder — real ARP monitoring is usually handled by a
+# dedicated tool (arpwatch, arping, or the Python engine's ARP detector).
+# preprocessor arpspoof
+# preprocessor arpspoof_detect_host: 10.0.0.1 AA:AA:AA:AA:AA:AA
+
+# --- DNS tunneling heuristics (long / unusual queries) ---
+alert udp any any -> any 53 (msg:"NTA - Suspiciously Long DNS Query (possible tunneling)"; \
+    content:"|00 01 00 00 00 00 00 00|"; offset:2; depth:8; \
+    dsize:>100; classtype:policy-violation; sid:1000004; rev:1;)
+
+# --- Common recon: Nmap SYN/ACK scan fingerprint ---
+alert tcp any any -> $HOME_NET any (msg:"NTA - Nmap-style scan fingerprint"; \
+    flags:SA; ack:0; classtype:attempted-recon; sid:1000005; rev:1;)
+
+# --- Null / Xmas / FIN scans (stealth scan types) ---
+alert tcp any any -> $HOME_NET any (msg:"NTA - NULL scan detected"; \
+    flags:0; classtype:attempted-recon; sid:1000006; rev:1;)
+
+alert tcp any any -> $HOME_NET any (msg:"NTA - XMAS scan detected"; \
+    flags:FPU; classtype:attempted-recon; sid:1000007; rev:1;)
+
+alert tcp any any -> $HOME_NET any (msg:"NTA - FIN scan detected"; \
+    flags:F; classtype:attempted-recon; sid:1000008; rev:1;)

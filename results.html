@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Analysis Results — {{ filename }}</title>
+<style>
+  :root { --bg: #0f172a; --card: #1e293b; --text: #e2e8f0; --muted: #94a3b8; --accent: #2563eb; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text);
+         margin: 0; padding: 2.5rem 1rem; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin-bottom: .2rem; }
+  .sub { color: var(--muted); margin-top: 0; }
+  .stats { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border-radius: 12px; padding: 1rem 1.3rem; flex: 1; min-width: 140px; }
+  .stat .num { font-size: 1.8rem; font-weight: 700; }
+  .stat .label { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  .alert { background: var(--card); border-left: 4px solid #334155; border-radius: 10px; padding: 1rem 1.3rem; margin-bottom: .8rem; }
+  .alert.HIGH { border-left-color: #ef4444; }
+  .alert.MEDIUM { border-left-color: #f59e0b; }
+  .alert.LOW { border-left-color: #3b82f6; }
+  .sev { font-size: .7rem; font-weight: 700; letter-spacing: .05em; padding: .15rem .5rem; border-radius: 999px; }
+  .sev.HIGH { background: #7f1d1d; color: #fecaca; }
+  .sev.MEDIUM { background: #78350f; color: #fed7aa; }
+  .sev.LOW { background: #1e3a8a; color: #bfdbfe; }
+  .msg { margin-top: .5rem; }
+  .empty { color: var(--muted); text-align: center; padding: 2rem; }
+  a.btn { display: inline-block; background: var(--accent); color: white; text-decoration: none;
+          padding: .6rem 1.2rem; border-radius: 8px; margin-top: 1.5rem; font-weight: 600; }
+  a.back { color: var(--muted); text-decoration: none; font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="{{ url_for('index') }}">&larr; Analyze another file</a>
+  <h1>Results for {{ filename }}</h1>
+  <p class="sub">{{ summary.total_packets }} packets analyzed &middot; {{ summary.total_alerts }} alert(s)</p>
+
+  <div class="stats">
+    <div class="stat"><div class="num">{{ summary.alerts_by_severity.get('HIGH', 0) }}</div><div class="label">High</div></div>
+    <div class="stat"><div class="num">{{ summary.alerts_by_severity.get('MEDIUM', 0) }}</div><div class="label">Medium</div></div>
+    <div class="stat"><div class="num">{{ summary.alerts_by_severity.get('LOW', 0) }}</div><div class="label">Low</div></div>
+  </div>
+
+  {% if alerts %}
+    {% for a in alerts %}
+      <div class="alert {{ a.severity }}">
+        <span class="sev {{ a.severity }}">{{ a.severity }}</span>
+        <b>{{ a.category.replace('_', ' ').title() }}</b>
+        <div class="msg">{{ a.message }}</div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="empty">No suspicious activity detected in this capture. ✅</div>
+  {% endif %}
+
+  <a class="btn" href="{{ url_for('download_report', job_id=job_id) }}">Download Full Report (HTML)</a>
+</div>
+</body>
+</html>
