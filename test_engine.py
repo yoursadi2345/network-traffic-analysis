@@ -1,9 +1,4 @@
-"""
-test_engine.py
----------------
-Sanity tests for engine.py using hand-built synthetic packet records
-(no scapy / pcap needed). Run: python3 test_engine.py
-"""
+
 import sys
 import random
 import string
